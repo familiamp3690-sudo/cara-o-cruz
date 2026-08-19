@@ -32,3 +32,23 @@ async function probarSupabase() {
 
 probarSupabase();
 </script>
+<script>
+async function probarSupabase() {
+  const { data, error } = await supabaseClient
+    .from('partidas')
+    .select('*')
+    .limit(1);
+
+  const mensaje = document.createElement('p');
+
+  if (error) {
+    mensaje.textContent = '❌ Error de Supabase: ' + error.message;
+  } else {
+    mensaje.textContent = '✅ Supabase conectado correctamente';
+  }
+
+  document.body.appendChild(mensaje);
+}
+
+probarSupabase();
+</script>
