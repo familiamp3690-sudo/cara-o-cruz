@@ -1,10 +1,20 @@
 <!doctype html>
 <html lang="es">
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
-const SUPABASE_URL =no https://bbfyzlkbiypvmnubiwhj.supabase.co/rest/v1/;
-const SUPABASE_KEY =sb_publishable_Grez3-Af2cL4o1KEj2y06Q_wpRKkEGE ;
+const SUPABASE_URL = 'https://bbfyzlkbiypvmnubiwhj.supabase.co';
+const SUPABASE_KEY = 'TU_CLAVE_PUBLICA';
+
+const supabaseClient = supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_KEY
+);
+</script> src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+const SUPABASE_URL = https://bbfyzlkbiypvmnubiwhj.supabase.co;
+const SUPABASE_KEY ='sb_publishable_Grez3-Af2cL4o1KEj2y06Q_wpRKkEGE' ;
 
 const supabaseClient = supabase.createClient(
   SUPABASE_URL,
@@ -17,7 +27,7 @@ const supabaseClient = supabase.createClient(
 *{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:Arial,sans-serif;background:linear-gradient(160deg,#111827,#312e81);color:#fff;display:flex;justify-content:center}.app{width:100%;max-width:430px;padding:24px 18px 35px;text-align:center}.badge{display:inline-block;padding:7px 12px;border-radius:20px;background:#ffffff18;border:1px solid #ffffff25;font-size:12px;margin-bottom:12px}h1{margin:4px 0 6px;font-size:36px}.sub{margin:0 0 20px;color:#d1d5db}.card{background:#ffffff12;border:1px solid #ffffff22;border-radius:24px;padding:20px}.balance{font-size:18px;margin-bottom:18px}.balance b{font-size:28px}.coin-wrap{height:190px;display:flex;align-items:center;justify-content:center}.coin{width:125px;height:125px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;background:linear-gradient(145deg,#facc15,#ca8a04);color:#3f2d00;border:7px solid #fde68a;box-shadow:0 12px 30px #0006}.flip{animation:flip .9s ease-in-out}@keyframes flip{from{transform:rotateY(0)}to{transform:rotateY(1080deg)}}.q{font-size:17px;margin:8px 0 14px}.choices{display:flex;gap:10px}button{flex:1;border:0;border-radius:15px;padding:15px 10px;font-size:17px;font-weight:700;cursor:pointer}button:disabled{opacity:.45}.result{min-height:55px;margin:16px 0 5px;font-size:20px;font-weight:800}.stats{display:flex;justify-content:space-around;margin-top:16px;color:#d1d5db;font-size:14px}.reset{margin-top:18px;background:#ffffff18;color:#fff;border:1px solid #ffffff30;font-size:14px}.notice{margin-top:20px;font-size:11px;color:#c7d2fe;line-height:1.4}
 </style></head><body><main class="app"><div class="badge">VERSIÓN 1 · MODO PRUEBA</div><h1>🪙 Cara o Cruz</h1><p class="sub">Elige tu lado y lanza la moneda.</p><section class="card"><div class="balance">Monedas virtuales: <b id="balance">100</b></div><div class="coin-wrap"><div class="coin" id="coin">🪙</div></div><div class="q">¿Qué eliges?</div><div class="choices"><button id="heads" onclick="play('CARA')">CARA</button><button id="tails" onclick="play('CRUZ')">CRUZ</button></div><div class="result" id="result">Haz tu elección para comenzar.</div><div class="stats"><span>Partidas: <b id="games">0</b></span><span>Victorias: <b id="wins">0</b></span></div><button class="reset" onclick="resetGame()">Reiniciar prueba</button></section><div class="notice">Prototipo experimental. Las monedas son ficticias y no tienen valor monetario.</div></main>
 <script>let balance=100,games=0,wins=0,busy=false;function play(choice){if(busy)return;busy=true;heads.disabled=tails.disabled=true;result.textContent='Lanzando...';coin.classList.remove('flip');void coin.offsetWidth;coin.classList.add('flip');let r=Math.random()<.5?'CARA':'CRUZ';setTimeout(()=>{games++;let won=choice===r;if(won){wins++;balance++}else balance=Math.max(0,balance-1);coin.textContent=r;document.getElementById('balance').textContent=balance;document.getElementById('games').textContent=games;document.getElementById('wins').textContent=wins;result.textContent=won?`🎉 ¡Ganaste! Salió ${r}. +1`:`😅 Salió ${r}. -1`;busy=false;heads.disabled=tails.disabled=false},900)}function resetGame(){balance=100;games=0;wins=0;document.getElementById('balance').textContent=100;document.getElementById('games').textContent=0;document.getElementById('wins').textContent=0;coin.textContent='🪙';result.textContent='Haz tu elección para comenzar.'}</script></body></html><script>
-async function probarSupabase() {
+async function probarSupabase {
   const { data, error } = await supabaseClient
     .from('partidas')
     .select('*')
@@ -30,10 +40,10 @@ async function probarSupabase() {
   }
 }
 
-probarSupabase();
+probarSupabase;
 </script>
 <script>
-async function probarSupabase() {
+async function probarSupabase {
   const { data, error } = await supabaseClient
     .from('partidas')
     .select('*')
